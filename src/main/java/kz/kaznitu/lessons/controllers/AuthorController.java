@@ -5,19 +5,23 @@ import kz.kaznitu.lessons.reposotories.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 @Controller
 @RequestMapping(path = "/demo")
+
 public class AuthorController {
     @Autowired
-    private AuthorRepository authorRepository ;
+    private AuthorRepository authorRepository;
 
+    @RequestMapping("/show")
+     public String showForm(Model model){
+                model.addAttribute("author",new Author());
+                return "inp";
+    }
     @GetMapping("/add")
     public @ResponseBody String addAuthor(@RequestParam("firstname") String firstName,
                                           @RequestParam("lastname") String lastName,
@@ -38,4 +42,17 @@ public class AuthorController {
         model.addAttribute("authors", authors) ;
         return "authors" ;
     }
+    @RequestMapping(value = "/deleteContact",method = RequestMethod.GET)
+    public ModelAndView deleteContact(@RequestParam("id") long idd){
+        authorRepository.deleteById(idd);
+        return new ModelAndView("redirect:/demo/all2");
+        }
+
+    //@RequestMapping(value = "/updateContact",method = RequestMethod.GET)
+   // public ModelAndView updateContact(@RequestParam("id") long idd){
+     //   Contact contact = authorRepository.get(idd);
+    //ModelAndView model = new ModelAndView("authors.html");
+     //   model.addObject("contact", contact);
+    //    return model;
+    //}
 }
