@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Title</title>
+    <link rel="stylesheet" th:href = "@{/css/bootstrap.min.css}" />
+
+</head>
+<body id="books">
+<div class="container">
+    <div class="row">
+        <a th:href = "@{/book/add}" class="btn btn-primary btn-lg" role="button">add</a>
+        <br/>
+        <table class="table">
+            <tr>
+                <th>Book Name</th>
+                <th>Book years</th>
+            </tr>
+            <tr th:each = "book : ${books}">
+                <td th:text = "${book.bookName}">test</td>
+                <td th:text = "${book.year}">test</td>
+                <td> <a th:href = "@{'/book/deleteBook?id='+${book.id}}">delete</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script th:src = "@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+</body>
+</html>
