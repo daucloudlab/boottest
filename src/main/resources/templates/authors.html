@@ -19,8 +19,9 @@
         <td th:text = "${author.firstName}">test</td>
         <td th:text = "${author.lastName}">test</td>
         <td th:text = "${author.email}">test</td>
-        <td> <a th:href="@{'/demo/editContact?id='+${author.id}}">Edit</a>
-        <td> <a th:href = "@{'/demo/deleteContact?id='+${author.id}}">Delete</a></td>
+        <td> <a href = '/demo/add'>Add</a></td>
+        <td> <a th:href="@{'/demo/editAuthor?id='+${author.id}}">Edit</a></td>
+        <td> <a th:href = "@{'/demo/deleteAuthor?id='+${author.id}}">Delete</a></td>
     </tr>
 </table>
     </div>

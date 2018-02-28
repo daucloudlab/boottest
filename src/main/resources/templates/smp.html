@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" th:href = "@{/css/bootstrap.min.css}" />
+    </head>
+<body>
+
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="form-group">
+                <form action="#" th:action="@{/demo/editAuthor}" th:object = "${author}" method="POST">
+                    <label for="firstname">First Name</label>
+                   <input type="text" id="firstname" name="firstname" th:field = "*{firstName}" class="form-control" placeholder="Есімін енгіз" value="${author.firstName}" />
+
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" name="lastname" th:field = "*{lastName}" class="form-control" placeholder="Тегін енгіз" value="${author.lastName}" />
+                        <label for="email">Email</label>
+                    <input type="email" id="email" name="email" th:field = "*{email}" class="form-control" placeholder="Поштасын енгіз" value="${author.email}"/>
+                       <br/>
+                    <button type="submit" class="btn btn-primary">Сақтау</button>
+
+                    </form>
+            </div>
+        </div>
+    </div>
+
+<script th:src = "@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+</body>
+</html>

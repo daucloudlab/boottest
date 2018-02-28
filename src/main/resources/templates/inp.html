@@ -1,17 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href = "@{/css/bootstrap.min.css}" />
 </head>
 <body>
-<form action="/demo/add" method="GET" modelAttribute="author">
-    First Name <input type="text" id="firstnamee" name="firstname"><br>
-    Last Name<input type="text" id="lastnamee" name="lastname"><br>
-    Email <input type="text" id="emaile" name="email"><br>
 
-    <input type="submit" value="ok">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="form-group">
+            <form action="#" th:action="@{/book/editBook}" th:object = "${book}" method="POST">
+                <label for="bookname">Book Name</label>
+                <input type="text" id="bookname" name="bookname" th:field = "*{book_name}" class="form-control" placeholder="Атын еңгіз" value="${book.book_name}" />
 
-</form>
+                <label for="bookauthor">Book Author</label>
+                <input type="text" id="bookauthor" name="bookauthor" th:field = "*{book_author}" class="form-control" placeholder="Авторын еңгіз" value="${book.book_author}"/>
+
+                <label for="bookgenre">Book Genre</label>
+                <input type="text" id="bookgenre" name="bookgenre" th:field = "*{book_genre}" class="form-control" placeholder="Жанрды еңгіз" value="${book.book_genre}"/>
+
+                <label for="years">Years</label>
+                <input type="text" id="years" name="yearse" th:field = "*{years}" class="form-control" placeholder="Жылын еңгіз" value="${book.years}"/>
+                <br/>
+                <button type="submit" class="btn btn-primary">Сақтау</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script th:src = "@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
 </body>
 </html>
