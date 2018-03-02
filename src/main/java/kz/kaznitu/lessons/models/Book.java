@@ -1,9 +1,6 @@
 package kz.kaznitu.lessons.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Book {
@@ -11,15 +8,15 @@ public class Book {
 @GeneratedValue(strategy = GenerationType.AUTO)
 private long book_id;
 private String book_name;
-private String book_author;
 private String book_genre;
 private int years;
+private Author author;
+
 
 public Book() {
   }
-    public Book(String book_name,String book_author, String book_genre, int years) {
+    public Book(String book_name, String book_genre, int years) {
     this.book_name = book_name;
-    this.book_author = book_author;
     this.book_genre = book_genre;
     this.years = years;
      }
@@ -40,14 +37,6 @@ public Book() {
          this.book_name = book_name;
         }
 
-    public String getBook_author() {
-        return book_author;
-    }
-
-    public void setBook_author(String book_author) {
-        this.book_author = book_author;
-    }
-
     public String getBook_genre() {
         return book_genre;
     }
@@ -64,4 +53,13 @@ public Book() {
          this.years = years;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "id")
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
 }

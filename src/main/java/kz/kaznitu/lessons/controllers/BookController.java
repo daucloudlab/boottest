@@ -52,7 +52,6 @@ public class BookController {
         Book book1 = new Book();
         book1.setBook_id(a);
         book1.setBook_name(book.getBook_name());
-        book1.setBook_author(book.getBook_author());
         book1.setBook_genre(book.getBook_genre());
         book1.setYears(book.getYears());
         bookRepository.save(book1);
