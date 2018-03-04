@@ -3,27 +3,23 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <title>Тізімдер</title>
+    <title>Авторлар тізімі</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}" type="text/css">
     <link rel="stylesheet" th:href = "@{/css/bootstrap.min.css}" />
+    <link rel="Icon" type="img/icon" th:href="@{/images/garland_favicon.png}">
+    <header>
+        <a href="/"><img th:src="@{/images/logo.png}"></a>
+    </header>
 </head>
-
 <body>
-<style>
+<nav>
+    <ul class="top-menu">
+        <li><a href="/demo/all">Авторлар тізімі</a></li>
+        <li><a href="/book/main">Кітаптар тізімі</a></li>
+    </ul>
+</nav>
 
-    body{
-        background: #cd91f9;
-    }
-    footer {
-        position: absolute;
-        left: 0; bottom: 0;
-        padding: 10px;
-        background: #fffc73;
-        color: #ff6666;
-        width: 100%;
-        font-style:italic;
-        text-align:center;
-    }
-</style>
 <div class="container">
     <div class="row">
         <a th:href = "@{/demo/add}" class="btn btn-primary btn-lg" role="button">add</a>
@@ -48,8 +44,5 @@
 
 <script th:src = "@{/js/bootstrap.min.js}"></script>
 <script th:src="@{/js/jquery-3.3.1.min.js}"></script>
-<footer>
-    &copy;ALL rights reserved 2018
-</footer>
 </body>
 </html>

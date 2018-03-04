@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
 <head>
-
     <meta charset="UTF-8" />
-    <title>Add Author page</title>
+    <title>Кітапты қосу беті</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}" type="text/css">
     <link rel="stylesheet" th:href = "@{/css/bootstrap.min.css}" />
+    <link rel="Icon" type="img/icon" th:href="@{/images/garland_favicon.png}">
+    <header>
+        <a href="/"><img th:src="@{/images/logo.png}"></a>
+    </header>
 </head>
 <body>
+<nav>
+    <ul class="top-menu">
+        <li><a href="/demo/all">Авторлар тізімі</a></li>
+        <li><a href="/book/main">Кітаптар тізімі</a></li>
+    </ul>
+</nav>
 
 
 <div class="container">

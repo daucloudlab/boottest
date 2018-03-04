@@ -1,32 +1,39 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <title>Тесттік сайт</title>
-    <link rel="stylesheet" th:href = "@{/css/style.css}" />
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css">
     <link rel="Icon" type="img/icon" href="images/garland_favicon.png">
+    <header>
+        <a href="/"><img src="images/logo.png"></a>
+    </header>
 </head>
-<header>
-    <img src ="images/white_logo.png" alt="logo">
-</header>
 <body>
-
-
-<div class="menu">
-    <a><strong>Басты бет</strong></a> |
-    <a href="/demo/all">Авторлар тізімі</a> |
-    <a href="/demo/add">Авторды қосу</a>
-</div>
+<nav>
+    <ul class="top-menu">
+        <li><a href="/demo/all">Авторлар тізімі</a></li>
+        <li><a href="/book/main">Кітаптар тізімі</a></li>
+    </ul>
+</nav>
 
 <p>
-    Қ.И.Сәтбаев атындағы Қазақ ұлттық техникалық зерттеу университеті әртүрлі
-    әлем елдерінің мамандары мен студенттерін біріктіретін
-    халықаралық-танымал ғылыми-зерттеу және білім беру мекемелерінде қалыптаса
-    бастаған жоғары жетістіктерге жетуге талпынады.
+    <img src="images/white_logo.png">
 </p>
-<footer>
-    &copy;ALL rights reserved 2018
 
+<div id="heading">
+    <h1>Қ.И.Сәтбаев атындағы Қазақ ұлттық техникалық зерттеу университеті әртүрлі
+        әлем елдерінің мамандары мен студенттерін біріктіретін
+        халықаралық-танымал ғылыми-зерттеу және білім беру мекемелерінде қалыптаса
+        бастаған жоғары жетістіктерге жетуге талпынады.
+    </h1>
+</div>
+<footer>
+    <div id="footer">
+            <p>Copyright © 2018 ҚАЗҰТЗУ. by Students</p>
+    </div>
 </footer>
 </body>
 </html>
