@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Тізімдер</title>
+    <link rel="stylesheet" th:href = "@{/css/bootstrap.min.css}" />
+</head>
+
+<body>
+<style>
+
+    body{
+        background: #cd91f9;
+    }
+    footer {
+        position: absolute;
+        left: 0; bottom: 0;
+        padding: 10px;
+        background: #fffc73;
+        color: #ff6666;
+        width: 100%;
+        font-style:italic;
+        text-align:center;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <a th:href = "@{/pub/add}" class="btn btn-primary btn-lg" role="button">add</a>
+        <br/>
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+            </tr>
+            <tr th:each = "publisher : ${publishers}">
+                <td th:text = "${publisher.Name}">test</td>
+                <td th:text = "${publisher.Email}">test</td>
+                <td th:text = "${publisher.Phone}">test</td>
+                <td th:text = "${publisher.Address}">test</td>
+                <td> <a th:href = "@{'/pub/deletePublisher?id='+${publisher.id}}">delete</a></td>
+
+
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script th:src = "@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<footer>
+    &copy;ALL rights reserved 2018
+</footer>
+</body>
+</html>
