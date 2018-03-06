@@ -3,20 +3,20 @@ package kz.kaznitu.lessons.models;
 import javax.persistence.*;
 
 @Entity
-public class Author {
+public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id ;
     private String firstName ;
     private String lastName ;
-    private String email ;
+    private int baga ;
 
-    public Author(){}
+    public Teacher(){}
 
-    public Author(String firstName, String lastName, String email) {
+    public Teacher(String firstName, String lastName, int baga) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.email = email;
+        this.baga = baga;
     }
 
     public long getId() {
@@ -43,11 +43,11 @@ public class Author {
         this.lastName = lastName;
     }
 
-    public String getEmail() {
-        return email;
+    public int  getBaga() {
+        return baga;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setBaga(int baga) {
+        this.baga = baga;
     }
 }

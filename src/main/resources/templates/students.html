@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Title</title>
+    <link rel="stylesheet" th:href = "@{/css/}" />
+</head>
+<body>
+<div class="container">
+    <div class="row">
+
+        <br/>
+        <table class="table">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Baga</th>
+            </tr>
+            <tr th:each = "student : ${students}">
+                <td th:text = "${student.firstName}">test</td>
+                <td th:text = "${student.lastName}">test</td>
+                <td th:text = "${student.baga}">test</td>
+                     </tr>
+        </table>
+    </div>
+</div>
+
+<script th:src = "@{/js/}"></script>
+<script th:src="@{/js/}"></script>
+</body>
+</html>

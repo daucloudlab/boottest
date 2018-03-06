@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Тізімдер</title>
+    <link rel="stylesheet" th:href = "@{/css/}" />
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <a th:href = "@{/teach/add}" class="btn btn-primary btn-lg" role="button">add</a>
+        <br/>
+        <table class="table">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>baga</th>
+            </tr>
+            <tr th:each = "teacher : ${teachers}">
+                <td th:text = "${teacher.firstName}">test</td>
+                <td th:text = "${teacher.lastName}">test</td>
+                <td th:text = "${teacher.baga}">test</td>
+                <td> <a th:href = "@{'/teach/deleteContact?id='+${teacher.id}}">delete</a></td>
+                <td> <a th:href = "@{'/teach/update?id='+${teacher.id}}">update</a></td>
+
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script th:src = "@{/js/}"></script>
+<script th:src="@{/js/}"></script>
+
+</body>
+</html>
