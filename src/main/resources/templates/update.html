@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" th:href = "@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href = "@{/css/}" />
 </head>
 <body>
 
 <div class="container">
     <div class="row justify-content-center">
         <div class="form-group">
-            <form action="#" th:action="@{/demo/adds}" th:object = "${authorr}" method="POST">
+            <form action="#" th:action="@{/teach/adds}" th:object = "${teacherr}" method="POST">
                 <label for="firstname">First Name</label>
-                <input type="text" id="firstname" name="firstname" th:field = "*{firstName}" class="form-control" placeholder="Есімін енгіз" value="${author.firstName}" />
+                <input type="text" id="firstname" name="firstname" th:field = "*{firstName}" class="form-control" placeholder="Есімін енгіз" value="${teacher.firstName}" />
 
                 <label for="lastname">Last Name</label>
-                <input type="text" id="lastname" name="lastname" th:field = "*{lastName}" class="form-control" placeholder="Тегін енгіз" value="${author.lastName}" />
+                <input type="text" id="lastname" name="lastname" th:field = "*{lastName}" class="form-control" placeholder="Тегін енгіз" value="${teacher.lastName}" />
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" th:field = "*{email}" class="form-control" placeholder="Поштасын енгіз" value="${author.email}"/>
+                <label for="baga">Baga</label>
+                <input type="number" id="baga" name="baga" th:field = "*{baga}" class="form-control" placeholder="Багасын енгіз" value="${teacher.baga}"/>
 
                 <br/>
                 <button type="submit" class="btn btn-primary">Сақтау</button>
@@ -29,7 +29,7 @@
     </div>
 </div>
 
-<script th:src = "@{/js/bootstrap.min.js}"></script>
-<script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+<script th:src = "@{/js/}"></script>
+<script th:src="@{/js/}"></script>
 </body>
 </html>
